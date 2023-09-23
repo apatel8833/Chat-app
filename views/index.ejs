@@ -1,9 +1,6 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,9 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <title>Socket.Io</title>
   <style>
-
-    
-    #main{
+    #main {
       position: absolute;
       height: 80%;
       width: 70%;
@@ -23,62 +18,69 @@
       display: flex;
       border-radius: 20px;
     }
-    #left{
+
+    #left {
       padding: 15px;
       width: 25%;
       background-color: rgb(233, 233, 233);
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
 
-     
+
       display: flex;
       flex-direction: column;
 
     }
-    #right{
+
+    #right {
 
       width: 75%;
       display: flex;
       flex-direction: column;
     }
-    #top{
+
+    #top {
       width: 100%;
       height: 10%;
       background-color: rgb(211, 253, 253);
       border-top-right-radius: 20px;
     }
-    #bottom{
+
+    #bottom {
       width: 100%;
       height: 80%;
       background-color: rgb(255, 245, 205);
       display: flex;
       overflow-x: scroll;
     }
-    ::-webkit-scrollbar{
+
+    ::-webkit-scrollbar {
       display: none;
     }
-    
 
-    .right{
+
+    .right {
       height: 100%;
       width: 50%;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       padding: 20px 0px;
-      font-family: 'baloo-bhai',cursive;
-     
+      font-family: 'baloo-bhai', cursive;
+
     }
-    .left{
+
+    .left {
       height: 100%;
       width: 50%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       padding: 20px 0px;
-      font-family: 'baloo-bhai',cursive;
+      font-family: 'baloo-bhai', cursive;
     }
-    .prompt{
+
+    .prompt {
       position: absolute;
       height: 100%;
       width: 100%;
@@ -92,8 +94,8 @@
       align-items: center;
       text-align: center;
     }
-    
-    .prompt>.box{
+
+    .prompt>.box {
       height: 20vh;
       width: 25vw;
       background-color: white;
@@ -104,10 +106,12 @@
       justify-content: center;
 
     }
-    .box>.heading{
+
+    .box>.heading {
       font-size: 2vw;
     }
-    #prompt{
+
+    #prompt {
       padding: 1vh 2vw;
       border-radius: 10px;
       color: black;
@@ -116,8 +120,8 @@
 
 
     }
-    
-    .name{
+
+    .name {
       padding: 15px;
       z-index: 9999;
       color: black;
@@ -126,7 +130,8 @@
 
 
     }
-    .typing{
+
+    .typing {
       padding: 15px;
       z-index: 9999;
       color: black;
@@ -136,20 +141,23 @@
 
 
     }
-    #usr-name{
+
+    #usr-name {
       z-index: 99;
       position: relative;
     }
-    #pop{
+
+    #pop {
       position: relative;
       left: 40%;
-      top:30px;
+      top: 30px;
       width: max-content;
       height: max-content;
       font-size: 20px;
       text-align: center;
     }
-    .message{
+
+    .message {
       background-color: rgb(245, 234, 116);
       margin: 6px 0px;
       padding: 3px 8px;
@@ -157,33 +165,38 @@
       border-bottom-left-radius: 100px;
       display: flex;
       flex-direction: column;
-      
+
     }
-    .nm{
+
+    .nm {
       color: white;
       font-size: 8px;
     }
-    .msg{
+
+    .msg {
       color: brown;
       margin-top: -3px;
     }
-    .apnmsg{
-      background-color:aquamarine;
+
+    .apnmsg {
+      background-color: aquamarine;
       margin: 6px 0px;
       padding: 3px 6px;
       border-top-right-radius: 100px;
       border-bottom-right-radius: 100px;
     }
-    i{
+
+    i {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%,-50%);
+      transform: translate(-50%, -50%);
       font-size: 25px;
       color: black;
       z-index: 9;
     }
-    .time{
+
+    .time {
       color: black;
       font-size: 6px;
       position: relative;
@@ -191,24 +204,27 @@
       display: flex;
       justify-content: flex-end;
     }
-    .online{
+
+    .online {
       display: flex;
       align-items: center;
       margin-bottom: 20px;
     }
-    .cir
-    {
+
+    .cir {
       height: 15px;
       width: 15px;
       border-radius: 100%;
       background-color: green;
       margin-right: 5px;
     }
-    .onl{
+
+    .onl {
       font-size: 20px;
 
     }
-    #typebox{
+
+    #typebox {
       position: relative;
       width: 100%;
       /* border: 3px solid red; */
@@ -217,7 +233,8 @@
       text-align: center;
       align-items: center;
     }
-    #chat{
+
+    #chat {
       width: 30vw;
       /* margin-left: 20%; */
       /* margin-top: 8px; */
@@ -228,7 +245,9 @@
       padding-left: 20px;
       background-color: cornsilk;
     }
-    #btn1{position: relative;
+
+    #btn1 {
+      position: relative;
       padding: 20px 20px;
       border-radius: 100%;
       /* bottom: 5px; */
@@ -236,7 +255,8 @@
       cursor: pointer;
       border: 1px solid black;
     }
-    #btn2{
+
+    #btn2 {
       padding: 3px 10px;
       border-radius: 10px;
       margin-top: 5px;
@@ -244,9 +264,22 @@
       width: 10vw;
 
     }
-    
+
+
+
+
+
+    @media only screen and (max-width: 600px) {
+      #main {
+        height: 100%;
+        width: 100%;
+        top: 0%;
+        left: 0%;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <div id="main">
@@ -259,25 +292,25 @@
       </div>
     </div>
     <div id="left">
-      
+
     </div>
     <div id="right">
       <div id="top">
-        <div class="name" id="usr-name" ></div>
+        <div class="name" id="usr-name"></div>
         <div id="typing"></div>
       </div>
       <div id="bottom">
         <div id="pop">
         </div>
         <div class="left">
-          
+
         </div>
         <div class="right">
-          
+
         </div>
       </div>
       <div id="typebox">
-        <input type="text" name="" id="chat" placeholder="Type a message.." >
+        <input type="text" name="" id="chat" placeholder="Type a message..">
         <button id="btn1" type="submit"><i class="ri-send-plane-fill"></i></button>
       </div>
     </div>
@@ -286,4 +319,5 @@
   <script src="/socket.io/socket.io.js"></script>
   <script src="../javascripts/main.js"></script>
 </body>
+
 </html>
