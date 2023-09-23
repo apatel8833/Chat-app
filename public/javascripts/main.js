@@ -54,27 +54,27 @@ btn2.addEventListener("click", function () {
 socket.on("new-joined", function (res) {
     // name.innerHTML = `<div class="name">${res}</div>`
     pop.innerHTML = ` <h6>${res} joined the chat</h6>`
+    setTimeout(function () {
+        pop.innerHTML = ""
+        pop.style.backgroundColor = "none";
+    }, 3000)
     pop.style.backgroundColor = "yellow";
     online.innerHTML += `<div class="online">
                             <div class="cir"></div>
                             <div class="onl">@${res}</div>
                         </div>`
     alluser.innerHTML += ` <div class="usr">@${res}</div> `
-    setTimeout(function () {
-        pop.innerHTML = ""
-        pop.style.backgroundColor = "none";
-    }, 3000)
 })
 socket.on("user-dis", function (user) {
     pop.innerHTML = ` <h6>${user} left the chat</h6>`
-    pop.style.backgroundColor = "yellow";
-    onl.innerHTML = "";
-
     setTimeout(function () {
         pop.innerHTML = ""
         pop.style.backgroundColor = "none";
 
     }, 3000)
+    pop.style.backgroundColor = "yellow";
+    onl.innerHTML = "";
+
 })
 input.addEventListener("input", function (val) {
     socket.emit("typing", { val: val, user: search.value });
